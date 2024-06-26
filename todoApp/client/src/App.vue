@@ -27,8 +27,6 @@ import { mapActions, mapGetters, mapState } from 'vuex';
       return {
         ...mapState({ tasks: (state: any) => state.tasks }),
       }
-  },
-  mounted() {
   }
 })
 export default class App extends Vue {}

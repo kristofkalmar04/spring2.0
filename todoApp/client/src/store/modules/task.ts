@@ -1,4 +1,4 @@
-import { ActionContext, ActionTree } from 'vuex';
+import { ActionTree } from 'vuex';
 import api from '../../api/tasks';
 
 export interface Task
