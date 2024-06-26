@@ -65,5 +65,12 @@ export default {
     font-size: 16px;
     font-weight: bold;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background-color 0.15s linear, border 0.15s linear;
+}
+
+.createButton:hover {
+    border: 1px solid #000;
+    background-color: #284161;
 }
 </style>
