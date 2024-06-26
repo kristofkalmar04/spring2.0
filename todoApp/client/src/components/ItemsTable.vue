@@ -15,7 +15,12 @@
                         :checked="row.completed"
                         @click="checkItem(row.id)" />
                 </td>
-                <td>{{ row.text }}</td>
+                <td>
+                    <input
+                        class="textInput"
+                        @change="updateText(row.id, $event)"
+                        :value="row.text"/>
+                </td>
                 <td>
                     <button
                         class="trashButton"
@@ -41,6 +46,12 @@ export default {
     methods: {
         deleteItem(id: Number) {
             store.commit('task/deleteTask', id);
+        },
+        updateText(id: Number, event: any) {
+            store.commit('task/updateTask', {
+                id,
+                text: event.target.value,
+            });
         },
         checkItem(id: Number) {
             store.commit('task/checkItem', id);
@@ -77,6 +88,16 @@ table {
     border-radius: 8px;
     text-align: left;
     overflow: hidden
+}
+
+.textInput {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
 
 table thead tr th

@@ -24,6 +24,16 @@ function deleteTask(id: Number): Promise<any>
     });
 }
 
+function updateTask(data: any): Promise<any>
+{
+    return axios.put('http://localhost:8080/task/updateText', null, {
+        params: {
+            id: data.id,
+            text: data.text,
+        }
+    });
+}
+
 function checkItem(id: Number): Promise<any>
 {
     return axios.put('http://localhost:8080/task', null, {
@@ -38,4 +48,5 @@ export default {
     createTask,
     deleteTask,
     checkItem,
+    updateTask,
 }

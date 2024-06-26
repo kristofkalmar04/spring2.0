@@ -31,6 +31,10 @@ const mutations = {
             state.tasks = state.tasks.filter((a) => a.id != id);
         })
     },
+    updateTask(state: TasksState, data: any): void {
+        api.updateTask(data).then(() => {
+        })
+    },
     checkItem(state: TasksState, id: Number): void {
         api.checkItem(id).then(() => {
         })
